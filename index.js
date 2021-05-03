@@ -8,12 +8,6 @@ const util = require('util');
 const employee = require('./employee');
 const writeFileAsync = util.promisify(fs.writeFile);
 
-var officemanager = new manager("Fonzie", 0, "Fonzie@dogs.com", "my heart" );
-var officeengineer = new engineer("millie", 1, "millie@dogs.com", "my heart@github" );
-var officeintern = new intern("percy", 2, "percy@dogs.com", "my heart U" );
-
-
-
 const managerQuestions = [
       {
         type: 'input',
@@ -28,7 +22,7 @@ const managerQuestions = [
       {
         type: 'input',
         name: 'office',
-        message: 'What What is your office number?',
+        message: 'Whatmis your office number?',
       }
     
     ];
@@ -40,9 +34,8 @@ const positionQuestions = [
         name: 'position',
         message: 'Is the employee an engineer or intern?',
         choices: [
-          "Engineer",
-          "Intern",
-          "No more team members"
+          "engineer",
+          "intern",
         ]
       }
     ];
@@ -52,17 +45,17 @@ const engineerQuestions = [
       {
         type: 'input',
         name: 'name',
-        message: 'What is your name?',
+        message: 'What is the engineers name?',
       },
       {
         type: 'input',
         name: 'email',
-        message: 'What is your email address?',
+        message: 'What is their email address?',
       },
       {
         type: 'input',
         name: 'github',
-        message: 'Enter your Github Username.',
+        message: 'Enter their Github Username.',
       }
     ];
   
@@ -71,17 +64,17 @@ const internQuestions = [
       {
         type: 'input',
         name: 'name',
-        message: 'What is your name?',
+        message: 'What is the interns name?',
       },
       {
         type: 'input',
         name: 'email',
-        message: 'What is your email address?',
+        message: 'What is their email address?',
       },
       {
         type: 'input',
         name: 'school',
-        message: 'What school are you attending?',
+        message: 'What school are they attending?',
       }
     ];
 
@@ -115,51 +108,6 @@ const generateHTMLHead =
       <div class="container">
           <div class="row">
               <div class="team-area col-12 d-flex justify-content-center">`
-   
-// const generateManagerHTML =             
-//     `<div class="card employee-card">
-//       <div class="card-header">
-//           <h2 class="card-title">${officemanager.employeeName}</h2>
-//           <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${officemanager.title}</h3>
-//       </div>
-//       <div class="card-body">
-//           <ul class="list-group">
-//               <li class="list-group-item">${officemanager.ID}</li>
-//               <li class="list-group-item">Email: <a href="mailto:${officemanager.email}">${officemanager.email}</a></li>
-//               <li class="list-group-item">${officemanager.office}</li>
-//           </ul>
-//       </div>
-//   </div>`
-
-//   const generateEngineerHTML =             
-//   `<div class="card employee-card">
-//       <div class="card-header">
-//           <h2 class="card-title">${officeengineer.employeeName}</h2>
-//           <h3 class="card-title"><i class="fas fa-glasses mr-2"></i>${officeengineer.title}</h3>
-//       </div>
-//       <div class="card-body">
-//           <ul class="list-group">
-//               <li class="list-group-item">ID: 1123</li>
-//               <li class="list-group-item">Email: <a href="mailto:${officeengineer.email}">${officeengineer.email}</a></li>
-//               <li class="list-group-item">GitHub: <a href="https://github.com/${officeengineer.github}" target="_blank" rel="noopener noreferrer">${officeengineer.github}</a></li>
-//           </ul>
-//       </div>
-//   </div>`
-
-//   const generateInternHTML =             
-//   `<div class="card employee-card">
-//       <div class="card-header">
-//           <h2 class="card-title">${officeintern.employeeName}</h2>
-//           <h3 class="card-title"><i class="fas fa-user-graduate mr-2"></i>${officeintern.title}</h3>
-//       </div>
-//       <div class="card-body">
-//           <ul class="list-group">
-//               <li class="list-group-item">ID: ${officeintern.ID}</li>
-//               <li class="list-group-item">Email: <a href="mailto:${officeintern.email}">${officeintern.email}</a></li>
-//               <li class="list-group-item">School: ${officeintern.school}</li>
-//           </ul>
-//       </div>
-//   </div>`
 
  const generateHTMLFoot=
 `</body> </html>`;
@@ -266,17 +214,6 @@ function buildHTML(employees){
       allHTML+= generateHTMLFoot
       return allHTML;
     }
-
-
-
-
-
-// const allHTML = generateHTMLHead+generateManagerHTML+generateEngineerHTML+generateInternHTML+generateHTMLFoot
-
-
-
-
-
 
 
   const init = () => {
