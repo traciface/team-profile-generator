@@ -36,9 +36,14 @@ const managerQuestions = [
   
 const positionQuestions = [
       {
-        type: 'input',
+        type: 'list',
         name: 'position',
         message: 'Is the employee an engineer or intern?',
+        choices: [
+          "Engineer",
+          "Intern",
+          "No more team members"
+        ]
       }
     ];
 

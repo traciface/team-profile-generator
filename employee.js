@@ -5,6 +5,23 @@ class employee {
         this.ID = ID;
         this.email = email;
     }
+
+
+	getName() {
+		return this.employeeName;
+	}
+
+	getId() {
+		return this.ID;
+	}
+
+	getEmail() {
+		return this.email;
+	}
+
+	getRole() {
+		return 'Employee';
+	}
 }
 
 module.exports = employee;
